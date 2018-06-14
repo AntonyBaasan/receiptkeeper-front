@@ -10,14 +10,17 @@ import { Page } from '../model/page.model';
 import { URLSearchParams } from '@angular/http';
 import { FilterInfo } from '../model/filter-info.model';
 import { DatePipe } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReceiptService {
-  private backendUrl = 'http://localhost:8080/receipts';
+  private backendUrl = '';
 
-  constructor(private http: HttpClient, private datePipe: DatePipe) {}
+  constructor(private http: HttpClient, private datePipe: DatePipe) {
+    this.backendUrl = environment.backendUrl+'/receipts';
+  }
 
   getNewReceiptTemplate(): Receipt {
     return {

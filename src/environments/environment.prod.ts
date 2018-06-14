@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  receiptDetectorFunctionUrl: 'https://us-central1-angularattack2018.cloudfunctions.net/receiptdetector'
+  backendUrl: 'http://localhost:8080',
+  receiptDetectorFunctionUrl: 'https://us-central1-bookingpreneur.cloudfunctions.net/receiptdetector'
 };

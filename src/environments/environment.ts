@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  receiptDetectorFunctionUrl: 'https://us-central1-angularattack2018.cloudfunctions.net/receiptdetector' //http://localhost:5001/bookingpreneur/us-central1/receiptdetector
+  backendUrl: 'http://localhost:8080',
+  receiptDetectorFunctionUrl: 'https://us-central1-bookingpreneur.cloudfunctions.net/receiptdetector'
+  // receiptDetectorFunctionUrl: 'http://localhost:5001/bookingpreneur/us-central1/receiptdetector'
 };
 
 /*
