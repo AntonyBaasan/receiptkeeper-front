@@ -1,0 +1,5 @@
+<div #uploader class="uploader" (click)="onClickUploader()">
+  click here or drag here your images
+  <img #image src="" />
+  <input #filePhoto type="file" name="picture" id="filePhoto" (change)="ImageChange($event)"/>
+</div>
