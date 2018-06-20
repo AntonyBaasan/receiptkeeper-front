@@ -75,7 +75,7 @@ export class ItemListComponent implements OnInit {
   }
 
   public loadMore() {
-    this.isLoadingResults = true;
+    // this.isLoadingResults = true;
   }
 
   deselectById(id: number) {

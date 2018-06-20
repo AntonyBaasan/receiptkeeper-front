@@ -1,7 +1,9 @@
-<div id="item-holder" (scroll)="onTableScroll($event)">
-    <div id="div2">
-        <app-auth></app-auth>
-        <app-item-filter [(filterInfo)]="filterInfo"></app-item-filter>
-        <app-item-list #itemList [(filterInfo)]="filterInfo"></app-item-list>
-    </div>
-</div>
+<mat-card>
+    <mat-card-content>
+        <div (scroll)="onTableScroll($event)">
+            <app-auth></app-auth>
+            <app-item-filter [(filterInfo)]="filterInfo"></app-item-filter>
+            <app-item-list #itemList [(filterInfo)]="filterInfo"></app-item-list>
+        </div>
+    </mat-card-content>
+</mat-card>
