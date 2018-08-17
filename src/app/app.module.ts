@@ -20,7 +20,7 @@ import { ImportMaterialModule } from './importmaterial/importmaterial.module';
 import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { StoreModule } from '@ngrx/store';
-import { rootReducer } from './reducer';
+import { rootReducer } from './reducers';
 
 @NgModule({
   declarations: [AppComponent],
