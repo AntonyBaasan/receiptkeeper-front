@@ -19,6 +19,8 @@ import { firebaseConfig } from './config/firebase-config';
 import { ImportMaterialModule } from './importmaterial/importmaterial.module';
 import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './reducer/counter.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +38,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AppRoutingModule,
     HomeModule,
     ItemsModule,
+    StoreModule.forRoot({ counter: counterReducer }),
   ],
   providers: [ReceiptService, DatePipe, {
     provide : HTTP_INTERCEPTORS,

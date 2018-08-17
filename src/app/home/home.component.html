@@ -1,5 +1,11 @@
 <mat-card>
-    <button mat-raised-button color="primary">Click me!</button>
+  {{counter | async}}
+  <br/>
+  <button mat-raised-button (click)="increment()">Inc</button>
+  <button mat-raised-button (click)="decrement()">Dec</button>
+  <button mat-raised-button (click)="reset()">Reset</button>
+  <br/>
+  <button mat-raised-button color="primary">Click me!</button>
 
-    {{env | json}}
+  {{env | json}}
 </mat-card>
