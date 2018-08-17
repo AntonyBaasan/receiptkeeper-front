@@ -17,7 +17,7 @@ export class AuthComponent implements OnInit {
     this.afAuth.auth
       .signInWithPopup(new auth.GoogleAuthProvider())
       .then(result => {
-        const token = result.credential.accessToken;
+        // const token = result.credential.accessToken;
       })
       .catch(this.loginErrorHandler.bind(this));
   }
@@ -25,7 +25,7 @@ export class AuthComponent implements OnInit {
     this.afAuth.auth
       .signInWithPopup(new auth.GithubAuthProvider())
       .then(result => {
-        const token = result.credential.accessToken;
+        // const token = result.credential.accessToken;
       })
       .catch(this.loginErrorHandler.bind(this));
   }
@@ -33,7 +33,7 @@ export class AuthComponent implements OnInit {
     this.afAuth.auth
       .signInWithPopup(new auth.FacebookAuthProvider())
       .then(result => {
-        const token = result.credential.accessToken;
+        // const token = result.credential.accessToken;
       })
       .catch(this.loginErrorHandler.bind(this));
   }
