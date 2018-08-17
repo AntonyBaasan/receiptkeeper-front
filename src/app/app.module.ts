@@ -20,7 +20,7 @@ import { ImportMaterialModule } from './importmaterial/importmaterial.module';
 import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './reducer/counter.reducer';
+import { rootReducer } from './reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +38,7 @@ import { counterReducer } from './reducer/counter.reducer';
     AppRoutingModule,
     HomeModule,
     ItemsModule,
-    StoreModule.forRoot({ counter: counterReducer }),
+    StoreModule.forRoot(rootReducer),
   ],
   providers: [ReceiptService, DatePipe, {
     provide : HTTP_INTERCEPTORS,
