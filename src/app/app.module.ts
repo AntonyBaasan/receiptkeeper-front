@@ -21,6 +21,7 @@ import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { StoreModule } from '@ngrx/store';
 import * as fromState from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,9 @@ import * as fromState from './reducers';
     HomeModule,
     ItemsModule,
     StoreModule.forRoot(fromState.reducers, { metaReducers: fromState.metaReducers }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
   ],
   providers: [ReceiptService, DatePipe, {
     provide : HTTP_INTERCEPTORS,
