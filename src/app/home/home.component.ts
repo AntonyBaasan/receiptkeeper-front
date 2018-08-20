@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from '../reducer/counter.reducer';
+import { IncrementCounters, DecrementCounters, ResetCounters } from '../actions/counter.actions';
 
 interface AppState {
   counter: number;
@@ -26,14 +26,14 @@ export class HomeComponent implements OnInit {
   }
 
   increment() {
-    this.store.dispatch({ type: INCREMENT });
+    this.store.dispatch(new IncrementCounters());
   }
 
   decrement() {
-    this.store.dispatch({ type: DECREMENT });
+    this.store.dispatch(new DecrementCounters());
   }
 
   reset() {
-    this.store.dispatch({ type: RESET });
+    this.store.dispatch(new ResetCounters());
   }
 }

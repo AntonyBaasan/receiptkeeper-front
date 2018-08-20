@@ -20,7 +20,7 @@ import { ImportMaterialModule } from './importmaterial/importmaterial.module';
 import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { StoreModule } from '@ngrx/store';
-import { rootReducer } from './reducers';
+import * as fromState from './reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +38,7 @@ import { rootReducer } from './reducers';
     AppRoutingModule,
     HomeModule,
     ItemsModule,
-    StoreModule.forRoot(rootReducer),
+    StoreModule.forRoot(fromState.reducers, { metaReducers: fromState.metaReducers }),
   ],
   providers: [ReceiptService, DatePipe, {
     provide : HTTP_INTERCEPTORS,

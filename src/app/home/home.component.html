@@ -1,5 +1,5 @@
 <mat-card>
-  {{counter | async}}
+  {{(counter | async).count}}
   <br/>
   <button mat-raised-button (click)="increment()">Inc</button>
   <button mat-raised-button (click)="decrement()">Dec</button>
