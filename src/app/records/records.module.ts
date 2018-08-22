@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ImportMaterialModule } from '../importmaterial/importmaterial.module';
 import { RecordListComponent } from './presentation/record-list/record-list.component';
 import { RecordButtonsComponent } from './presentation/record-buttons/record-buttons.component';
+import { RecordFilterComponent } from './presentation/record-filter/record-filter.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { RecordButtonsComponent } from './presentation/record-buttons/record-but
     RecordsShellComponent,
     RecordListComponent,
     RecordButtonsComponent,
+    RecordFilterComponent,
   ]
 })
 export class RecordsModule { }
