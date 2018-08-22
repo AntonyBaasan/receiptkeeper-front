@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { ItemsModule } from './items/items.module';
+import { RecordsModule } from './records/records.module';
 import { ReceiptService } from './services/receipt.service';
 import { SharedModule } from './shared/shared.module';
 import { firebaseConfig } from './config/firebase-config';
@@ -39,6 +40,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     HomeModule,
     ItemsModule,
+    RecordsModule,
     StoreModule.forRoot(fromState.reducers, { metaReducers: fromState.metaReducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

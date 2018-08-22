@@ -1,13 +1,13 @@
-import { recordReducer, initialState } from './record.reducer';
+// import { recordReducer, initialState } from './record.reducer';
 
-describe('Record Reducer', () => {
-  describe('unknown action', () => {
-    it('should return the initial state', () => {
-      const action = {} as any;
+// describe('Record Reducer', () => {
+//   describe('unknown action', () => {
+//     it('should return the initial state', () => {
+//       const action = {} as any;
 
-      const result = recordReducer(initialState, action);
+//       const result = recordReducer(initialState, action);
 
-      expect(result).toBe(initialState);
-    });
-  });
-});
+//       expect(result).toBe(initialState);
+//     });
+//   });
+// });

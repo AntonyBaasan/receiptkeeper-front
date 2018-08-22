@@ -1,0 +1,43 @@
+.list-item {
+    background-color: DodgerBlue;
+    margin-bottom: 5px;
+    height: 50px;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .flex-item {
+    margin-left: 5px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  td, th {
+    width: 25%;
+  }
+
+  .mat-row:hover {
+    background-color:  #f2f2f2;
+  }
+
+  .loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

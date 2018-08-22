@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-content>
+    <div (scroll)="onTableScroll($event)">
+      <app-auth></app-auth>
+      <app-record-buttons [isSingleSelect]="false" [hasAnySelect]="false"></app-record-buttons>
+      <app-record-list [records]="[]"></app-record-list>
+    </div>
+  </mat-card-content>
+</mat-card>
