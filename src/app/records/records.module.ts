@@ -8,6 +8,7 @@ import { ImportMaterialModule } from '../importmaterial/importmaterial.module';
 import { RecordListComponent } from './presentation/record-list/record-list.component';
 import { RecordButtonsComponent } from './presentation/record-buttons/record-buttons.component';
 import { RecordFilterComponent } from './presentation/record-filter/record-filter.component';
+import { RecordEditComponent } from './presentation/record-edit/record-edit.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { RecordFilterComponent } from './presentation/record-filter/record-filte
     RecordListComponent,
     RecordButtonsComponent,
     RecordFilterComponent,
+    RecordEditComponent,
   ]
 })
 export class RecordsModule { }

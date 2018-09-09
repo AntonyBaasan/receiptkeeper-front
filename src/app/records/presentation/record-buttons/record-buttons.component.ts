@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-record-buttons',
@@ -8,6 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RecordButtonsComponent implements OnInit {
   @Input() isSingleSelect: boolean;
   @Input() hasAnySelect: boolean;
+
+  @Output() OnClickAddNew: EventEmitter<any> = new EventEmitter();
+  @Output() OnClickEdit: EventEmitter<any> = new EventEmitter();
+  @Output() OnClickRemove: EventEmitter<any> = new EventEmitter();
+  @Output() OnClickRefresh: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
