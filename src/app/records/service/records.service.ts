@@ -25,7 +25,8 @@ export class RecordsService {
 
   getNewReceiptTemplate(): Record {
     return {
-      id: null
+      id: null,
+      title: '',
       // title: 'New title',
       // description: 'New description',
       // date: new Date(),

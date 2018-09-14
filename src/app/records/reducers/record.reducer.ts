@@ -1,6 +1,7 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { Record } from '../models/record.model';
 import { RecordActions, RecordActionTypes } from '../actions/record.actions';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface RecordState extends EntityState<Record> {
   // additional entities state properties
@@ -64,8 +65,12 @@ export function recordReducer(
 }
 
 export const {
-  selectIds,
+  selectIds: selectRecordIds,
   selectEntities,
   selectAll,
   selectTotal,
 } = adapter.getSelectors();
+
+export const getRecordState = (state: any) => state.recordState;
+
+export const selectAllRecords = createSelector(getRecordState, selectAll);
