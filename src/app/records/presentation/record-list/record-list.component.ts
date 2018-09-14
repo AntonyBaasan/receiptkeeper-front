@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter, ChangeDetectionStrategy, SimpleChanges } from '@angular/core';
 import { MatDialog, MatPaginator, MatSort } from '@angular/material';
 import { Record } from '../../models/record.model';
 import { ReceiptService } from '../../../services/receipt.service';
@@ -13,7 +13,8 @@ import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-record-list',
   templateUrl: './record-list.component.html',
-  styleUrls: ['./record-list.component.css']
+  styleUrls: ['./record-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecordListComponent implements OnInit {
   @Input() records: Record[];
@@ -33,7 +34,11 @@ export class RecordListComponent implements OnInit {
   ngOnInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.data = this.records;
-    // this.dataSource.data = [];
+  }
+  
+  ngOnChanges(changes: SimpleChanges) {
+    this.dataSource.sort = this.sort;
+    this.dataSource.data = this.records || [];
   }
 
   pageChangeClicked() { }

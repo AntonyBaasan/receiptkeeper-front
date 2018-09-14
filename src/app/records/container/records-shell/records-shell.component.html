@@ -4,7 +4,7 @@
       <app-auth></app-auth>
       <app-record-filter></app-record-filter>
       <app-record-buttons [isSingleSelect]="false" [hasAnySelect]="false"></app-record-buttons>
-      <app-record-list [records]="[]"></app-record-list>
+      <app-record-list [records]="records$ | async"></app-record-list>
     </div>
     <app-record-edit></app-record-edit>
     <button (click)="addRecord()">Add record</button>
