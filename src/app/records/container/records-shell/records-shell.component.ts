@@ -18,6 +18,7 @@ interface AppState {
 export class RecordsShellComponent implements OnInit {
 
   records$: Observable<Record[]>;
+  selectedRecordIds$: Observable<number[]>;
   name: string;
 
   constructor(private store: Store<AppState>) {
@@ -37,8 +38,8 @@ export class RecordsShellComponent implements OnInit {
     }));
   }
 
-  onSelectRecord(record: Record) {
-    console.log("record selected: " + record.id);
+  onSelectionUpdate(selectedIds: number[]) {
+    console.log("record selected: " + selectedIds);
   }
 
 }

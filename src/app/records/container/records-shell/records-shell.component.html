@@ -5,7 +5,7 @@
       <app-record-filter></app-record-filter>
       <app-record-buttons [selectedRecords]="records$ | async" (OnClickAddNew)="onClickAddRecord()">
       </app-record-buttons>
-      <app-record-list [records]="records$ | async"></app-record-list>
+      <app-record-list [records]="records$ | async" [selectedRecordIds]="selectedRecordIds$ | async" (onSelectionUpdate)="onSelectionUpdate($event)"></app-record-list>
     </div>
     <app-record-edit></app-record-edit>
   </mat-card-content>
