@@ -3,10 +3,10 @@
     <button mat-raised-button color="primary" (click)="addNew()">New</button>
   </div>
   <div class="flex-item">
-    <button mat-raised-button color="primary" (click)="edit()" [disabled]="!isSingleSelect">Edit</button>
+    <button mat-raised-button color="primary" (click)="edit()" [disabled]="!isSingleSelect()">Edit</button>
   </div>
   <div class="flex-item">
-    <button mat-raised-button color="warn" (click)="remove()" [disabled]="!hasAnySelect">Delete</button>
+    <button mat-raised-button color="warn" (click)="remove()" [disabled]="!hasAnySelect()">Delete</button>
   </div>
   <div class="flex-item">
     <button mat-raised-button color="warn" (click)="refresh()" >Refresh</button>

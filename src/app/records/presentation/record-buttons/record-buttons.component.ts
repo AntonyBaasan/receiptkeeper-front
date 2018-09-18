@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Record } from '../../models/record.model';
 
 @Component({
   selector: 'app-record-buttons',
@@ -6,8 +7,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./record-buttons.component.css']
 })
 export class RecordButtonsComponent implements OnInit {
-  @Input() isSingleSelect: boolean;
-  @Input() hasAnySelect: boolean;
+  @Input() selectedRecords: Record[] = [];
 
   @Output() OnClickAddNew: EventEmitter<any> = new EventEmitter();
   @Output() OnClickEdit: EventEmitter<any> = new EventEmitter();
@@ -22,9 +22,16 @@ export class RecordButtonsComponent implements OnInit {
   public addNew() {
     this.OnClickAddNew.emit();
   }
-  
+
   public edit() { }
   public remove() { }
   public refresh() { }
 
+  hasAnySelect() {
+    return this.selectedRecords.length > 0;
+  }
+
+  isSingleSelect() {
+    return this.selectedRecords.length === 1;
+  }
 }

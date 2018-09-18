@@ -35,7 +35,10 @@ export class RecordsShellComponent implements OnInit {
         title: 'Title ' + (randomId)
       }
     }));
+  }
 
+  onSelectRecord(record: Record) {
+    console.log("record selected: " + record.id);
   }
 
 }
