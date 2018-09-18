@@ -19,7 +19,10 @@ export class RecordButtonsComponent implements OnInit {
   ngOnInit() {
   }
 
-  public addNew() { }
+  public addNew() {
+    this.OnClickAddNew.emit();
+  }
+  
   public edit() { }
   public remove() { }
   public refresh() { }

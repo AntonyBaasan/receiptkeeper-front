@@ -27,7 +27,7 @@ export class RecordsShellComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addRecord() {
+  onClickAddRecord() {
     const randomId = Math.random() * 100000;
     this.store.dispatch(new AddRecord({
       record: {
