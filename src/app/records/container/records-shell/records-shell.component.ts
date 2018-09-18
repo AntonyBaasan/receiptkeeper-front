@@ -18,7 +18,6 @@ interface AppState {
 export class RecordsShellComponent implements OnInit {
 
   records$: Observable<Record[]>;
-  records: Record[];
   name: string;
 
   constructor(private store: Store<AppState>) {
