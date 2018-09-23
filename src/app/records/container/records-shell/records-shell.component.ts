@@ -1,14 +1,10 @@
 import { Component, OnInit, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { AddRecord } from '../../actions/record.actions';
-import { selectAllRecords } from '../../reducers/record.reducer';
+import { AddRecord, SetSelectedRecords } from '../../actions/record.actions';
+import { selectAllRecords, RecordState } from '../../reducers/record.reducer';
 import { Record } from '../../models/record.model';
 import { Observable } from 'rxjs';
-
-interface AppState {
-  counter: number;
-  recordState: any[];
-}
+import { AppState } from '../../../reducers';
 
 @Component({
   selector: 'app-records-shell',
@@ -18,11 +14,12 @@ interface AppState {
 export class RecordsShellComponent implements OnInit {
 
   records$: Observable<Record[]>;
-  selectedRecordIds$: Observable<number[]>;
+  selectedRecordIds$: Observable<string[]>;
   name: string;
 
   constructor(private store: Store<AppState>) {
     this.records$ = this.store.pipe(select(selectAllRecords));
+    this.selectedRecordIds$ = this.store.pipe(select(state => state.recordState.selectedIds));
   }
 
   ngOnInit(): void {
@@ -38,8 +35,12 @@ export class RecordsShellComponent implements OnInit {
     }));
   }
 
-  onSelectionUpdate(selectedIds: number[]) {
-    console.log("record selected: " + selectedIds);
+  onSelectionUpdate(selectedIds: string[]) {
+    console.log('record selected: ' + selectedIds);
+
+    this.store.dispatch(new SetSelectedRecords({
+      ids: selectedIds
+    }));
   }
 
 }

@@ -12,7 +12,8 @@ export enum RecordActionTypes {
   UpdateRecords = '[Record] Update Records',
   DeleteRecord = '[Record] Delete Record',
   DeleteRecords = '[Record] Delete Records',
-  ClearRecords = '[Record] Clear Records'
+  ClearRecords = '[Record] Clear Records',
+  SetSelectedRecords = '[Record] Set Selected Records'
 }
 
 export class LoadRecords implements Action {
@@ -73,6 +74,11 @@ export class ClearRecords implements Action {
   readonly type = RecordActionTypes.ClearRecords;
 }
 
+export class SetSelectedRecords implements Action {
+  readonly type = RecordActionTypes.SetSelectedRecords;
+
+  constructor(public payload: { ids: string[] }) {}
+}
 export type RecordActions =
  LoadRecords
  | AddRecord
@@ -83,4 +89,5 @@ export type RecordActions =
  | UpdateRecords
  | DeleteRecord
  | DeleteRecords
+ | SetSelectedRecords
  | ClearRecords;

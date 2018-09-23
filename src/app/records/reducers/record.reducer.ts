@@ -5,12 +5,14 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface RecordState extends EntityState<Record> {
   // additional entities state properties
+  selectedIds: string[];
 }
 
 export const adapter: EntityAdapter<Record> = createEntityAdapter<Record>();
 
 export const initialState: RecordState = adapter.getInitialState({
   // additional entity state properties
+  selectedIds: []
 });
 
 export function recordReducer(
@@ -56,6 +58,11 @@ export function recordReducer(
 
     case RecordActionTypes.ClearRecords: {
       return adapter.removeAll(state);
+    }
+
+    case RecordActionTypes.SetSelectedRecords: {
+      state.selectedIds = action.payload.ids;
+      return state;
     }
 
     default: {

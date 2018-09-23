@@ -24,7 +24,9 @@ export class RecordListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onSelectionUpdate: EventEmitter<any> = new EventEmitter();
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onClickEdit: EventEmitter<any> = new EventEmitter();
 
   targetReceipt: Record;
@@ -38,8 +40,19 @@ export class RecordListComponent implements OnInit {
   ngOnInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.data = this.records;
+    this.updateSelection();
   }
 
+  private updateSelection() {
+
+    console.log(this.records.filter(r => _.includes(this.selectedRecordIds, r.id)));
+
+    this.selection.select(
+      ...this.records.filter(r => _.includes(this.selectedRecordIds, r.id))
+    );
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges(changes: SimpleChanges) {
     this.dataSource.sort = this.sort;
     this.dataSource.data = this.records || [];
@@ -59,11 +72,11 @@ export class RecordListComponent implements OnInit {
   }
 
   onSelect($event: MatCheckboxChange, row: Record) {
-    console.log("OnSelect call..");
+    console.log('OnSelect call..');
 
     this.selection.toggle(row);
 
-    this.onSelectionUpdate.emit({ selectedIds: this.selection.selected.map(s => s.id) });
+    this.onSelectionUpdate.emit(this.selection.selected.map(s => s.id));
   }
 
   pageChangeClicked() { }
