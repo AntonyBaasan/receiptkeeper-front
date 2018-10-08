@@ -38,8 +38,9 @@ export class RecordsShellComponent implements OnInit {
     //   }
     // }));
     const newRecord = {
-      title: 'New title ',
-      description: 'New title ',
+      title: 'New title',
+      description: 'New description',
+      date: new Date(),
     } as Record;
 
     this.showDialog(newRecord);
