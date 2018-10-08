@@ -28,6 +28,7 @@ export class RecordEditComponent implements OnInit {
   detectedMessage = '';
   detectedText = '';
   today = new FormControl(new Date());
+  selectedTab = new FormControl(1);
 
   constructor(
     private textUtilsService: TextutilsService,
@@ -108,6 +109,10 @@ export class RecordEditComponent implements OnInit {
     const result = this.textUtilsService.convertToLines(text);
     const receipt = this.textUtilsService.stringLinesToReceipt(result);
     return receipt;
+  }
+
+  noImage() {
+    this.selectedTab.setValue(1);
   }
 
   saveReceipt(record: Record) {
