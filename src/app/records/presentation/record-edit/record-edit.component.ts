@@ -28,7 +28,7 @@ export class RecordEditComponent implements OnInit {
   detectedMessage = '';
   detectedText = '';
   today = new FormControl(new Date());
-  selectedTab = new FormControl(1);
+  selectedTab = new FormControl(0);
 
   constructor(
     private textUtilsService: TextutilsService,
