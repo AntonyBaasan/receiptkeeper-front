@@ -25,6 +25,9 @@ import { RecordEditComponent } from './presentation/record-edit/record-edit.comp
     RecordButtonsComponent,
     RecordFilterComponent,
     RecordEditComponent,
+  ],
+  entryComponents: [
+    RecordEditComponent // this fixes material dialog component issue
   ]
 })
 export class RecordsModule { }

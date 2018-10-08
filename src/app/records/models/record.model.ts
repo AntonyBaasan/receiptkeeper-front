@@ -4,4 +4,5 @@ export interface Record {
   description?: string;
   imageUrl?: string;
   date?: Date;
+  total?: Number;
 }
