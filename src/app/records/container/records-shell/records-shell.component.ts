@@ -57,7 +57,6 @@ export class RecordsShellComponent implements OnInit {
 
   private showDialog(record: Record) {
     const dialogRef = this.dialog.open(RecordEditComponent, {
-      width: '550px',
       data: { record: _.cloneDeep(record) }
     });
 
