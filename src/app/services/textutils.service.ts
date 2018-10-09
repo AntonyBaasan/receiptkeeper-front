@@ -10,6 +10,7 @@ import { ReceiptDetectionResult } from '../model/receipt-detection-result.model'
 export class TextutilsService {
   constructor() {}
 
+  // converts multiline string into string[] base on the new line delimeter
   public convertToLines(fullText: string): string[] {
     // tslint:disable-next-line:quotemark
     const r = _.filter(fullText.split('\n'), (t: string) => {
@@ -23,6 +24,7 @@ export class TextutilsService {
     return _.map(r, s => s.toLowerCase());
   }
 
+  // goes throug lines and gets Receipt related information
   public stringLinesToReceipt(textLines: string[]): ReceiptDetectionResult {
     const receipt: ReceiptDetectionResult = { total: [], date: [], title: [] };
     receipt.title.push(textLines[0]);

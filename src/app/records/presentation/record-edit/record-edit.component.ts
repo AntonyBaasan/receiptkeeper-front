@@ -28,6 +28,7 @@ export class RecordEditComponent implements OnInit {
   detectedMessage = '';
   detectedText = '';
   today = new FormControl(new Date());
+  // 0 - Upload image, 1 - Edit
   selectedTab = new FormControl(0);
 
   constructor(
